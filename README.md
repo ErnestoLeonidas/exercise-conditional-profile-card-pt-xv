@@ -1,4 +1,7 @@
-# Conditional Profile Card
+# Ver trabajo terminado en:
+  https://ErnestoLeonidas.github.io/exercise-conditional-profile-card-pt-xv
+  
+## Conditional Profile Card
 
 **Make sure that you have node.js installed in your computer and run the following command on your terminal to preview your website:**
 As a web developer, you will be creatings lots and lots of dynamic HTML using Javascript based algorithms.
