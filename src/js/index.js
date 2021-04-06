@@ -29,18 +29,45 @@ function render(variables = {}) {
   let cover = `<div class="cover"><img src="${variables.background}" /></div>`;
   if (variables.includeCover == false) cover = "<div class='cover'></div>";
 
+  /* variables por defecto */
+  let nombre = "Lucy";
+  let apellido = "Boilett";
+  let twitter = "alesanchezr";
+  let github = "alesanchezr";
+  let linkedin = "alesanchezr";
+  let instagram = "alesanchezr";
+  let role = "Web Developer";
+  let city = "Miami";
+  let country = "USA";
+
+  if (variables.name != null && variables.name.trim() != "")
+    nombre = variables.name;
+  if (variables.lastname != null && variables.lastname.trim() != "")
+    apellido = variables.lastname;
+  if (variables.twitter != null && variables.twitter.trim() != "")
+    twitter = variables.twitter;
+  if (variables.github != null && variables.github.trim() != "")
+    github = variables.github;
+  if (variables.linkedin != null && variables.linkedin.trim() != "")
+    linkedin = variables.linkedin;
+  if (variables.instagram != null && variables.instagram.trim() != "")
+    instagram = variables.instagram;
+  if (variables.role != null) role = variables.role;
+  if (variables.city != null) city = variables.city;
+  if (variables.country != null) country = variables.country;
+
   // reset the website body with the new html output
   document.querySelector("#widget_content").innerHTML = `<div class="widget">
             ${cover}
           <img src="${variables.avatarURL}" class="photo" />
-          <h1>Lucy Boilett</h1>
-          <h2>Web Developer</h2>
-          <h3>Miami, USA</h3>
-          <ul class="position-right">
-            <li><a href="https://twitter.com/alesanchezr"><i class="fa fa-twitter"></i></a></li>
-            <li><a href="https://github.com/alesanchezr"><i class="fa fa-github"></i></a></li>
-            <li><a href="https://linkedin.com/alesanchezr"><i class="fa fa-linkedin"></i></a></li>
-            <li><a href="https://instagram.com/alesanchezr"><i class="fa fa-instagram"></i></a></li>
+          <h1>${nombre} ${apellido}</h1>
+          <h2>${role}</h2>
+          <h3>${city}, ${country}</h3>
+          <ul class="${variables.socialMediaPosition}">
+            <li><a href="https://twitter.com/${twitter}"><i class="fa fa-twitter"></i></a></li>
+            <li><a href="https://github.com/${github}"><i class="fa fa-github"></i></a></li>
+            <li><a href="https://linkedin.com/${linkedin}"><i class="fa fa-linkedin"></i></a></li>
+            <li><a href="https://instagram.com/${instagram}"><i class="fa fa-instagram"></i></a></li>
           </ul>
         </div>
     `;
